@@ -1,4 +1,5 @@
-BD={"lauty":"password"}
+#Base de datos usuario-contraseña
+BD={"lauty":"password123"}
 
 #Funcion para mostrar informacion
 def Mostrar_base_de_datos():
@@ -30,7 +31,7 @@ def login():
          print("Ha podido ingresar correctamente")
 
 #Funcion para elgir cual de las acciones se quiere realizar
-def eliga_su_accion():
+def menu_principal():
     print("Escriba \"Quiero registrarme\" para registrarse en la base de datos")
     print("Escriba \"Quiero ingresar\" para logearse en la base de datos")
     print("Escriba \"Quiero ver la informacion\" para ver la informacion en la base de datos")
@@ -45,20 +46,5 @@ def eliga_su_accion():
         else:
             Mostrar_base_de_datos()
 
-    
-    
-    
-    # if accion.capitalize() == "Quiero registrarme":
-    #     registro_en_base_de_datos()
-    # elif accion.capitalize() == "Quiero ingresar":
-    #     login()
-    # elif accion.capitalize() == "Quiero ver la informacion":
-    #     Mostrar_base_de_datos()
-    # else:
-    #     accion=input("El comando escrito no es ninguno de los esperados. Intente de nuevo:") 
-
-# def mostrar_info():
-eliga_su_accion()
-
-
+menu_principal()
     
