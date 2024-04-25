@@ -3,8 +3,9 @@ base_de_datos={"lauty":"password123"}
 
 #Funcion para mostrar informacion
 def mostrar_base_de_datos():
-    for clave,valor in base_de_datos.items():
-        print(clave,":", valor)
+    for user,password in base_de_datos.items():
+        print(f"{user} = {password}")
+
 #Funcion para alamcenar informacion
 def registro_en_base_de_datos():
     user=input("Defina su nombre de usuario:")
@@ -14,15 +15,16 @@ def registro_en_base_de_datos():
     else:
         base_de_datos[user]=password
         print("Su usuario se registro exitosamente")
+
 #Funcion para login de usuarios
 def login():
-    nombre_esperado=input("Ingrese su nombre de usuario:")
+    user_esperado=input("Ingrese su nombre de usuario:")
     password_esperada=input("Ingrese la contraseña correspondiente a su usuario:")
-    while nombre_esperado not in base_de_datos:
-        nombre_esperado=input("Este usuario no esta registrado intente otro:")
+    while user_esperado not in base_de_datos:
+        user_esperado=input("Este usuario no esta registrado intente otro:")
 
     intentos=3
-    while (base_de_datos[nombre_esperado] != password_esperada) and (intentos > 0):
+    while (base_de_datos[user_esperado] != password_esperada) and (intentos > 0):
         password_esperada=input("La contraseña ingrsada no es la correcta, intente otra vez:")
         intentos -= 1
     else:
@@ -47,4 +49,5 @@ def menu_principal():
         else:
             mostrar_base_de_datos()
 
-menu_principal()
+#menu_principal()
+mostrar_base_de_datos()
